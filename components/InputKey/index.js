@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const InputToken = () => {
+export const InputKey = () => {
 	const [key, setKey] = useState("");
 	return (
 		<div>

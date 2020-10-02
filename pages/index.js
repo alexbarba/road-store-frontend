@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { InputToken } from "../components/InputToken";
+import { InputKey } from "../components/InputKey";
+import { ProductsTable } from "../components/ProductsTable";
 export default function Home() {
 	return (
 		<div className={styles.container}>
@@ -17,7 +19,9 @@ export default function Home() {
 				</p>
 
 				<div className={styles.grid}>
-					<InputToken />
+					<InputToken className={styles.gridElement} />
+					<InputKey />
+					<ProductsTable />
 				</div>
 			</main>
 
