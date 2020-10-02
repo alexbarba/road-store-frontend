@@ -27,11 +27,9 @@ export const ProductInfo = ({ props }) => {
 	if (key[0] == "5") {
 		input = { id: key };
 		query = PRODUCTID;
-		console.log("ID");
 	} else {
 		input = { sku: key };
 		query = PRODUCTSKU;
-		console.log("SKU");
 	}
 
 	const { loading, error, data } = useQuery(query, {

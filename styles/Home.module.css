@@ -72,11 +72,11 @@
 }
 
 .grid {
-	display: flex;
+	display: block;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-
+	margin: auto;
 	max-width: 800px;
 	margin-top: 3rem;
 }

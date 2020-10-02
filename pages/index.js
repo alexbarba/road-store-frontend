@@ -7,6 +7,7 @@ import { ProductsTable } from "../components/ProductsTable";
 import { ProductInfo } from "../components/ProductInfo";
 export default function Home() {
 	const [product, setProduct] = useState(undefined);
+	const [products, setProducts] = useState(false);
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -22,12 +23,15 @@ export default function Home() {
 				</p>
 
 				<div className={styles.grid}>
-					<ProductsTable />
+					{products && <ProductsTable />}
 					<Form
-						props={{ search: ({ token, key }) => setProduct({ token, key }) }}
+						props={{
+							searchProduct: ({ token, key }) => setProduct({ token, key }),
+							searchProducts: (v) => setProducts(v),
+						}}
 					/>
+					{product && <ProductInfo props={{ product }} />}
 				</div>
-				{product && <ProductInfo props={{ product }} />}
 			</main>
 
 			<footer className={styles.footer}>
