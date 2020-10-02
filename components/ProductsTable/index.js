@@ -14,19 +14,22 @@ export const ProductsTable = () => {
 	if (loading) return <div>...loading</div>;
 	if (error) return <div>error :(</div>;
 	return (
-		<table>
-			<tr>
-				<th>_id</th>
-				<th>sku</th>
-			</tr>
-			{data.products.map((product) => {
-				return (
-					<tr>
-						<td>{product._id}</td>
-						<td>{product.sku}</td>
-					</tr>
-				);
-			})}
-		</table>
+		<div>
+			<h3>Lista de productos</h3>
+			<table>
+				<tr>
+					<th>_id</th>
+					<th>sku</th>
+				</tr>
+				{data.products.map((product) => {
+					return (
+						<tr>
+							<td>{product._id}</td>
+							<td>{product.sku}</td>
+						</tr>
+					);
+				})}
+			</table>
+		</div>
 	);
 };

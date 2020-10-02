@@ -1,9 +1,12 @@
 import Head from "next/head";
+import { useState } from "react";
 import styles from "../styles/Home.module.css";
-import { InputToken } from "../components/InputToken";
-import { InputKey } from "../components/InputKey";
+import { Form } from "../components/Form";
+
 import { ProductsTable } from "../components/ProductsTable";
+import { ProductInfo } from "../components/ProductInfo";
 export default function Home() {
+	const [product, setProduct] = useState(undefined);
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -19,10 +22,12 @@ export default function Home() {
 				</p>
 
 				<div className={styles.grid}>
-					<InputToken className={styles.gridElement} />
-					<InputKey />
 					<ProductsTable />
+					<Form
+						props={{ search: ({ token, key }) => setProduct({ token, key }) }}
+					/>
 				</div>
+				{product && <ProductInfo props={{ product }} />}
 			</main>
 
 			<footer className={styles.footer}>
